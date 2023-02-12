@@ -33,7 +33,7 @@ public class ParserVertical {
         }
     }
 
-    private static List<Product> parseInputStream(int offset, int limit, InputStream inputStream) {
+    public static List<Product> parseInputStream(int offset, int limit, InputStream inputStream) {
         List<Product> products = new ArrayList<>();
         int i = 0;
         try (Scanner scanner = new Scanner(inputStream)) {
@@ -57,8 +57,8 @@ public class ParserVertical {
                         }
                     }
                     stringBuilder = new StringBuilder();
+                    i++;
                 }
-                i++;
             }
             return products;
         }
