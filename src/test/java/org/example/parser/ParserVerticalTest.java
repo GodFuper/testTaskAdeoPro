@@ -15,7 +15,8 @@ class ParserVerticalTest {
     @Test
     void parseInputStream() {
         StringBuilder stringBuilder = new StringBuilder();
-        List<String> urls = Arrays.asList("https://vertical.ru/product/abazhur-dlya-svetilnika-nastennyy-bannye-shtuchki-lipa-25-kh-16-kh-30-sm/",
+        List<String> urls = Arrays.asList("https://vertical.ru/catalog/lakokrasochnye-materialy/",
+                "https://vertical.ru/product/abazhur-dlya-svetilnika-nastennyy-bannye-shtuchki-lipa-25-kh-16-kh-30-sm/",
                 "https://vertical.ru/product/abazhur-dlya-svetilnika-nastennyy-bannye-shtuchki-lipa-30-kh-10-kh-36-sm/",
                 "https://vertical.ru/product/abazhur-dlya-svetilnika-uglovoy-bannye-shtuchki-kosichka-lipa-27-kh-11-kh-31-sm/",
                 "https://vertical.ru/product/abazhur-dlya-svetilnika-uglovoy-bannye-shtuchki-lipa-31-kh-10-kh-27-sm/",
