@@ -1,6 +1,5 @@
 package org.example.model;
 
-import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvBindByPosition;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,8 +7,8 @@ import lombok.Data;
 @AllArgsConstructor
 @Data
 public class Product {
-    @CsvBindByName(column = "Url")
+    @CsvBindByPosition(position = 1)
     private String url;
-    @CsvBindByName(column = "Article")
+    @CsvBindByPosition(position = 0)
     private String article;
 }
