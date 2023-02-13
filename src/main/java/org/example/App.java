@@ -57,7 +57,7 @@ public class App {
     }
 
     private static void saveCsv(List<Product> list, String path, char separator) throws ProjectException {
-        try (Writer writer = new FileWriter(path)) {
+        try (Writer writer = new FileWriter(path, true)) {
             StatefulBeanToCsv<Product> sbc = new StatefulBeanToCsvBuilder<Product>(writer)
                     .withSeparator(separator)
                     .build();
