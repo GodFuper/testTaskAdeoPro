@@ -46,18 +46,20 @@ public class ParserVertical {
                 if (stringBuilder.toString().contains(REGEX_END)) {
                     String str = stringBuilder.toString();
                     String urlStr = str.substring(str.indexOf(REGEX_START) + REGEX_START.length(), str.length() - REGEX_END.length());
-                    if (isProductUrl(urlStr) && offset <= i) {
-                        String article = parseArticleFromUrl(urlStr);
-                        if (article != null) {
-                            log.debug("{} {}", urlStr, article);
-                            products.add(new Product(urlStr, article));
-                            limit--;
-                        } else {
-                            log.warn("Can get article from {}", urlStr);
+                    if (isProductUrl(urlStr)) {
+                        if (offset <= i) {
+                            String article = parseArticleFromUrl(urlStr);
+                            if (article != null) {
+                                log.debug("{} {}", urlStr, article);
+                                products.add(new Product(urlStr, article));
+                                limit--;
+                            } else {
+                                log.warn("Can get article from {}", urlStr);
+                            }
                         }
+                        i++;
                     }
                     stringBuilder = new StringBuilder();
-                    i++;
                 }
             }
             return products;
